@@ -7,6 +7,9 @@ contract Crowdfunding {
         string title;
         string descrition;
         uint target;
-        
+        uint amountCollected;
+        string image;
+        address[] donators;
+        uint[] donations;
     }
 }
