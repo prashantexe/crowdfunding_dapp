@@ -13,4 +13,15 @@ contract Crowdfunding {
         uint[] donations;
     }
     mapping (uint => Campaign) public campaign;
+
+    uint public numberOfCampaigns = 0;
+
+    function createCampaign() public {}
+
+    function donateToCampaign() public {}
+
+    function getDonators() public {}
+    
+    function getCampaign() public {}
+
 }
