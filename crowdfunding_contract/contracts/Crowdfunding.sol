@@ -12,4 +12,5 @@ contract Crowdfunding {
         address[] donators;
         uint[] donations;
     }
+    mapping (uint => Campaign) public campaign;
 }
