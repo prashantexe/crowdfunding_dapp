@@ -12,7 +12,7 @@ contract Crowdfunding {
         address[] donators;
         uint[] donations;
     }
-    mapping (uint => Campaign) public campaign;
+    mapping (uint => Campaign) public campaigns;
 
     uint public numberOfCampaigns = 0;
 
@@ -24,7 +24,26 @@ contract Crowdfunding {
         uint _amountCollected,
         uint _deadline,
         string memory _image
-    ) public {}
+    ) public returns (uint){
+        Campaign storage campaign = campaigns[numberOfCampaigns];
+
+        require(
+            campaign.deadline > block.timestamp,
+            "deadline must be in the future"
+        );
+
+        campaign.owner = _owner;
+        campaign.title = _title;
+        campaign.descrition = _description;
+        campaign.amountCollected = _amountCollected;
+        campaign.target =_target;
+        campaign.deadline = _deadline;
+        campaign.image = _image;
+
+        numberOfCampaigns++;
+
+        return(numberOfCampaigns -1);
+    }
 
     function donateToCampaign() public {}
 
