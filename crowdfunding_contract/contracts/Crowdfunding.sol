@@ -16,7 +16,15 @@ contract Crowdfunding {
 
     uint public numberOfCampaigns = 0;
 
-    function createCampaign() public {}
+    function createCampaign(
+        string memory _title,
+        string memory _description,
+        address owner,
+        uint _target,
+        uint _amountCollected,
+        uint _deadline,
+        string memory _image
+    ) public {}
 
     function donateToCampaign() public {}
 
