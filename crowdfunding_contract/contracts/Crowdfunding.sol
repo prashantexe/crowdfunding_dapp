@@ -19,14 +19,17 @@ contract Crowdfunding {
 
     uint public numberOfCampaigns = 0;
 
-    function createCampaign(address _owner, 
-    string memory _title, 
-    string memory _description, 
-    uint _target, 
-    uint _amountCollected, 
-    uint _deadline, 
-    string memory _image
-     ) public returns (uint) {
+    function createCampaign(
+        address _owner, 
+        string memory _title, 
+        string memory _description, 
+        uint _target, 
+        uint _amountCollected, 
+        uint _deadline, 
+        string memory _image
+     ) 
+     
+        public returns (uint) {
         Campaign storage campaign = campaigns[numberOfCampaigns];
 
         require(campaign.deadline > block.timestamp, 
